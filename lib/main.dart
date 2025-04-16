@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'calendar_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'infinite_scroll_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,6 +56,13 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  void _navigateToInfiniteScrollPage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const InfiniteScrollPage()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,6 +84,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: _navigateToCalendarPage,
               child: const Text('Go to Calendar Page'),
+            ),
+            ElevatedButton(
+              onPressed: _navigateToInfiniteScrollPage,
+              child: const Text('Go to Infinite Scroll Page'),
             ),
           ],
         ),
